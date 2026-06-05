@@ -99,14 +99,14 @@ Admin can manage:
 
 This project was built with focus on:
 
-**Dynamic content management**
-**Responsive UI**
-**Modern industrial design**
-**Admin-controlled website content**
-**Firebase-based backend**
-**Cloudinary image management**
-**Smooth animations and scrolling**
-**Real business inquiry and quote management**
+- **Dynamic content management**
+- **Responsive UI**
+- **Modern industrial design**
+- **Admin-controlled website content**
+- **Firebase-based backend**
+- **Cloudinary image management**
+- **Smooth animations and scrolling**
+- **Real business inquiry and quote management**
 
 ## Smooth Scroll and Animation
 
