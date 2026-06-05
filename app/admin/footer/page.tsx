@@ -5,11 +5,12 @@ import { db } from "@/firebase/config";
 import {
   ContactsOutlined,
   EnvironmentOutlined,
-  FacebookOutlined,
   MailOutlined,
   PhoneOutlined,
   SaveOutlined,
 } from "@ant-design/icons";
+import { FaLinkedin, FaFacebookSquare } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
 import {
   Button,
   Card,
@@ -90,14 +91,22 @@ export default function FooterSettingsPage() {
     try {
       setSaving(true);
 
-      await setDoc(doc(db, "settings", "footer"), {
-        companyName: values.companyName,
-        description: values.description,
-        address: values.address,
-        phone: values.phone,
-        email: values.email,
-        copyright: values.copyright,
-      });
+      await setDoc(
+        doc(db, "settings", "footer"),
+        {
+          companyName: values.companyName || "",
+          description: values.description || "",
+          address: values.address || "",
+          phone: values.phone || "",
+          email: values.email || "",
+          copyright: values.copyright || "",
+
+          facebookUrl: values.facebookUrl || "",
+          instagramUrl: values.instagramUrl || "",
+          linkedinUrl: values.linkedinUrl || "",
+        },
+        { merge: true }
+      );
 
       message.success("Footer settings updated successfully");
     } catch (error) {
@@ -107,7 +116,6 @@ export default function FooterSettingsPage() {
       setSaving(false);
     }
   };
-
   if (loading) {
     return (
       <ProtectedRoutes>
@@ -143,6 +151,7 @@ export default function FooterSettingsPage() {
                 {description ||
                   "Professional industrial coating and surface finishing services."}
               </p>
+
             </div>
 
             <div>
@@ -163,7 +172,49 @@ export default function FooterSettingsPage() {
               <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-blue-300">
                 Contact
               </h3>
+              <div className="mt-5 flex items-center gap-3">
+                {facebookUrl && (
+                  <a
+                    href={facebookUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-blue-600"
+                    aria-label="Facebook"
+                  >
+                    <FaFacebookSquare />
+                  </a>
+                )}
 
+                {instagramUrl && (
+                  <a
+                    href={instagramUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-pink-600"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram />
+                  </a>
+                )}
+
+                {linkedinUrl && (
+                  <a
+                    href={linkedinUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-sky-700"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin />
+                  </a>
+                )}
+
+                {!facebookUrl && !instagramUrl && !linkedinUrl && (
+                  <p className="text-xs text-slate-400">
+                    Social icons will appear here after adding URLs.
+                  </p>
+                )}
+              </div>
               <div className="mt-4 space-y-3 text-sm text-slate-300">
                 <p className="flex gap-3">
                   <EnvironmentOutlined className="mt-1 text-blue-300" />
@@ -273,7 +324,7 @@ export default function FooterSettingsPage() {
             </h3>
 
             <Form.Item label="Facebook URL" name="facebookUrl">
-              
+
               <Input
                 size="large"
                 placeholder="https://facebook.com/your-page"
