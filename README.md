@@ -117,5 +117,5 @@ This project includes:
 - Lenis smooth scroll
 - Swiper 3D gallery effects
 
-## Developed by:
+## Developed by
 Aman Korabu
