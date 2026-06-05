@@ -69,7 +69,7 @@ export default function HomePage() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 flex min-h-[600px] items-center px-4 py-8 sm:min-h-[calc(100dvh-88px)] sm:px-6 sm:py-12 lg:px-8">
+          <div className="relative z-10 flex min-h-[620px] items-center px-4 py-8 sm:min-h-[calc(100dvh-88px)] sm:px-6 sm:py-12 lg:px-8">
             <div className="mx-auto w-full max-w-7xl">
               <div className="max-w-4xl text-white">
                 {/* Badge */}
