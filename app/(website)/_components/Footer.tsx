@@ -7,6 +7,8 @@ import {
   MailOutlined,
   PhoneOutlined,
 } from "@ant-design/icons";
+import { FaLinkedin, FaFacebookSquare } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -61,13 +63,51 @@ export default function Footer() {
                 Contact
               </Link>
             </div>
+
           </div>
 
           <div>
+
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-blue-300">
               Contact
             </h3>
+            <div className="mt-5 flex items-center gap-3">
+              {footerData.facebookUrl && (
+                <a
+                  href={footerData.facebookUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-blue-600"
+                  aria-label="Facebook"
+                >
+                  <FaFacebookSquare />
+                </a>
+              )}
 
+              {footerData.instagramUrl && (
+                <a
+                  href={footerData.instagramUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-pink-600"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram />
+                </a>
+              )}
+
+              {footerData.linkedinUrl && (
+                <a
+                  href={footerData.linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-sky-700"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin />
+                </a>
+              )}
+            </div>
             <div className="mt-4 space-y-3 text-sm text-slate-300">
               <p className="flex gap-3">
                 <EnvironmentOutlined className="mt-1 text-blue-300" />

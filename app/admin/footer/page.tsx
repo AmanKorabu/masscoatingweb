@@ -5,6 +5,7 @@ import { db } from "@/firebase/config";
 import {
   ContactsOutlined,
   EnvironmentOutlined,
+  FacebookOutlined,
   MailOutlined,
   PhoneOutlined,
   SaveOutlined,
@@ -31,6 +32,9 @@ type FooterFormValues = {
   phone: string;
   email: string;
   copyright: string;
+  facebookUrl: string;
+  instagramUrl: string;
+  linkedinUrl: string;
 };
 
 export default function FooterSettingsPage() {
@@ -45,7 +49,9 @@ export default function FooterSettingsPage() {
   const phone = Form.useWatch("phone", form);
   const email = Form.useWatch("email", form);
   const copyright = Form.useWatch("copyright", form);
-
+  const facebookUrl = Form.useWatch("facebookUrl", form);
+  const instagramUrl = Form.useWatch("instagramUrl", form);
+  const linkedinUrl = Form.useWatch("linkedinUrl", form);
   useEffect(() => {
     const fetchFooterSettings = async () => {
       try {
@@ -64,6 +70,9 @@ export default function FooterSettingsPage() {
             email: "",
             copyright:
               "© 2026 Mass Coating Company. All rights reserved.",
+            facebookUrl: "",
+            instagramUrl: "",
+            linkedinUrl: "",
           });
         }
       } catch (error) {
@@ -258,7 +267,33 @@ export default function FooterSettingsPage() {
               placeholder="© 2026 Mass Coating Company. All rights reserved."
             />
           </Form.Item>
+          <div className="mb-6 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <h3 className="mb-4 text-lg font-black text-slate-950">
+              Social Media Links
+            </h3>
 
+            <Form.Item label="Facebook URL" name="facebookUrl">
+              
+              <Input
+                size="large"
+                placeholder="https://facebook.com/your-page"
+              />
+            </Form.Item>
+
+            <Form.Item label="Instagram URL" name="instagramUrl">
+              <Input
+                size="large"
+                placeholder="https://instagram.com/your-page"
+              />
+            </Form.Item>
+
+            <Form.Item label="LinkedIn URL" name="linkedinUrl">
+              <Input
+                size="large"
+                placeholder="https://linkedin.com/company/your-company"
+              />
+            </Form.Item>
+          </div>
           <Button
             type="primary"
             htmlType="submit"

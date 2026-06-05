@@ -5,4 +5,7 @@ export interface FooterData {
   phone: string;
   email: string;
   copyright: string;
+  facebookUrl: string;
+  instagramUrl: string;
+  linkedinUrl: string;
 }
