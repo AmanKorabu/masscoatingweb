@@ -109,7 +109,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Elegant Info Strip */}
-                <div className="hidden sm:grid mt-4 grid max-w-4xl grid-cols-1 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.08] backdrop-blur-md sm:mt-8 sm:grid-cols-3 ">
+                <div className=" mt-4 grid max-w-4xl grid-cols-1 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.08] backdrop-blur-md sm:mt-8 sm:grid-cols-3 ">
                   <div className="border-b border-white/10 p-4 sm:border-b-0 sm:border-r">
                     <div className="flex items-center gap-2 text-cyan-300">
                       <CheckCircleOutlined />
