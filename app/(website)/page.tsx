@@ -69,7 +69,7 @@ export default function HomePage() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 flex min-h-[620px] items-center px-4 py-8 sm:min-h-[calc(100dvh-88px)] sm:px-6 sm:py-12 lg:px-8">
+          <div className="relative z-10 flex min-h-[600px] items-center px-4 py-8 sm:min-h-[calc(100dvh-88px)] sm:px-6 sm:py-12 lg:px-8">
             <div className="mx-auto w-full max-w-7xl">
               <div className="max-w-4xl text-white">
                 {/* Badge */}
@@ -109,7 +109,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Elegant Info Strip */}
-                <div className="mt-6 grid max-w-4xl grid-cols-1 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.08] backdrop-blur-md sm:mt-10 sm:grid-cols-3">
+                <div className="hidden sm:grid mt-4 grid max-w-4xl grid-cols-1 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.08] backdrop-blur-md sm:mt-8 sm:grid-cols-3 ">
                   <div className="border-b border-white/10 p-4 sm:border-b-0 sm:border-r">
                     <div className="flex items-center gap-2 text-cyan-300">
                       <CheckCircleOutlined />
@@ -179,7 +179,7 @@ export default function HomePage() {
           )}
         </section>
         <CustomersSection />
-      
+
         <AboutPreviewSection />
         {/* this will used for footer */}
         {/* <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
