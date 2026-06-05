@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mass Coating Company - Full Stack Dynamic Website
 
-## Getting Started
+A modern, responsive, and fully dynamic website for **Mass Coating Company**, built using **Next.js**, **Firebase**, **Cloudinary**, **Ant Design**, and **Tailwind CSS**.
 
-First, run the development server:
+This project includes a public business website and a protected admin panel where the company can manage website content without changing code.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Mass Coating Company website is designed for an industrial coating business that provides services like:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Shot Blasting
+- Powder Coating
+- Industrial Painting
+- Surface Finishing
+- Other coating and finishing services
 
-## Learn More
+The website is fully dynamic. Admin can manage navbar, hero section, about section, partners, services, gallery, contact page, quote page, messages, and quote requests from the admin panel.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend
 
-## Deploy on Vercel
+- Next.js
+- React.js
+- TypeScript
+- Tailwind CSS
+- Ant Design
+- Framer Motion
+- Swiper.js
+- Lenis Smooth Scroll
+- Day.js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Backend / Database
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Firebase Firestore
+- Firebase Authentication
+
+### Image Hosting
+
+- Cloudinary unsigned image upload
+
+### Deployment
+
+- Vercel recommended
+
+---
+
+## Main Features
+
+### Public Website
+
+- Dynamic Navbar
+- Dynamic Hero Section
+- Dynamic About Section
+- Dynamic Who We Are / Partners Section
+- Dynamic Services Page
+- Service Image Slider
+- Service Details Modal
+- Dynamic Gallery Page
+- Before / After Gallery
+- 3D Project Showcase using Swiper
+- Dynamic Contact Page
+- Google Map Embed Support
+- Contact Form Submission
+- Dynamic Get Quote Page
+- Quote Request Form with Image Upload
+- Smooth Page Transitions
+- Smooth Scroll Experience
+- Fully Responsive Design
+
+---
+
+## Admin Panel Features
+
+Admin can manage:
+
+- Navbar settings
+- Hero section
+- About section
+- Who We Are / Partners
+- Services
+- Gallery
+- Before / After Gallery
+- Contact page settings
+- Contact messages
+- Get Quote page settings
+- Quote requests
+- Uploaded images
+- Dynamic dropdown options
+- Message/request status
+
+---
+
+## Firebase Collections Structure
+
