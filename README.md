@@ -112,10 +112,10 @@ This project was built with focus on:
 
 This project includes:
 
--CSS smooth scroll
--Framer Motion page transitions
--Lenis smooth scroll
--Swiper 3D gallery effects
+- CSS smooth scroll
+- Framer Motion page transitions
+- Lenis smooth scroll
+- Swiper 3D gallery effects
 
 ## Developed by:
 Aman Korabu
