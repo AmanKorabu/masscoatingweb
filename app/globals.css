@@ -24,3 +24,226 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.custom-admin-menu .ant-menu-item {
+  height: 46px !important;
+  border-radius: 12px !important;
+  margin-bottom: 8px !important;
+}
+
+.custom-admin-menu .ant-menu-item-selected {
+  background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+}
+
+.custom-admin-menu .ant-menu-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.custom-partner-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-partner-slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-partner-slider::-webkit-scrollbar-thumb {
+  background: rgba(103, 232, 249, 0.35);
+  border-radius: 999px;
+}
+
+.custom-partner-slider::-webkit-scrollbar-thumb:hover {
+  background: rgba(103, 232, 249, 0.65);
+}
+
+.service-detail-modal .ant-modal-content {
+  border-radius: 28px !important;
+  padding: 18px !important;
+}
+
+@media (max-width: 640px) {
+  .service-detail-modal .ant-modal {
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  .service-detail-modal .ant-modal-content {
+    padding: 10px !important;
+    border-radius: 22px !important;
+  }
+}
+
+.service-detail-modal .ant-modal-content {
+  border-radius: 22px !important;
+  padding: 10px !important;
+}
+
+@media (max-width: 640px) {
+  .service-detail-modal {
+    max-width: calc(100vw - 20px) !important;
+  }
+
+  .service-detail-modal .ant-modal-content {
+    padding: 10px !important;
+    border-radius: 18px !important;
+  }
+}
+
+@keyframes pageLoader {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(350%);
+  }
+}
+
+.animate-page-loader {
+  animation: pageLoader 0.9s ease-in-out infinite;
+}
+
+.gallery-preview-modal .ant-modal-content {
+  border-radius: 24px !important;
+  padding: 14px !important;
+}
+
+@media (max-width: 640px) {
+  .gallery-preview-modal {
+    max-width: calc(100vw - 20px) !important;
+  }
+
+  .gallery-preview-modal .ant-modal-content {
+    padding: 10px !important;
+    border-radius: 18px !important;
+  }
+}.myGallerySwiper {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.myGallerySwiper .swiper-slide {
+  width: 320px;
+  height: 420px;
+}
+
+.myGallerySwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.myGallerySwiper .swiper-pagination {
+  bottom: 18px !important;
+}
+
+.myGallerySwiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #94a3b8;
+  opacity: 1;
+}
+
+.myGallerySwiper .swiper-pagination-bullet-active {
+  width: 26px;
+  border-radius: 999px;
+  background: #07111f;
+}
+
+.myGallerySwiper .swiper-slide-shadow-left,
+.myGallerySwiper .swiper-slide-shadow-right {
+  border-radius: 1.4rem;
+}
+
+.gallery-preview-modal .ant-modal-content {
+  border-radius: 24px !important;
+  padding: 14px !important;
+}
+
+@media (max-width: 640px) {
+  .myGallerySwiper {
+    padding-top: 20px;
+    padding-bottom: 55px;
+  }
+
+  .myGallerySwiper .swiper-slide {
+    width: 260px;
+    height: 360px;
+  }
+
+  .gallery-preview-modal {
+    max-width: calc(100vw - 20px) !important;
+  }
+
+  .gallery-preview-modal .ant-modal-content {
+    padding: 10px !important;
+    border-radius: 18px !important;
+  }
+}.beforeAfterSwiper .swiper-slide {
+  width: 280px;
+  height: auto;
+}
+
+/* Tablet */
+@media (min-width: 641px) {
+  .beforeAfterSwiper .swiper-slide {
+    width: 360px;
+    height: auto;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .beforeAfterSwiper {
+    padding-top: 26px;
+    padding-bottom: 68px;
+  }
+
+  .beforeAfterSwiper .swiper-slide {
+    width: 430px;
+    height: auto;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1280px) {
+  .beforeAfterSwiper .swiper-slide {
+    width: 460px;
+    height: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .beforeAfterSwiper {
+    padding-top: 18px;
+    padding-bottom: 55px;
+  }
+
+  .beforeAfterSwiper .swiper-slide {
+    width: 270px;
+    height: auto;
+  }
+}
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  transform: translateZ(0);
+}
