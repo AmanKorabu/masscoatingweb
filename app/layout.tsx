@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Professional industrial coating and surface finishing services with trusted quality and modern solutions.",
     verification: {
-    google: "eDShFwXzt3s-T8K7",
+    google: "eDShFwXzt3s-T8K7vOFYfob2drwsNZ49SV7sAanpSHA",
   },
 };
 
