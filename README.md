@@ -95,5 +95,27 @@ Admin can manage:
 
 ---
 
-## Firebase Collections Structure
+## Developer Notes
 
+This project was built with focus on:
+
+Dynamic content management
+Responsive UI
+Modern industrial design
+Admin-controlled website content
+Firebase-based backend
+Cloudinary image management
+Smooth animations and scrolling
+Real business inquiry and quote management
+
+## Smooth Scroll and Animation
+
+This project includes:
+
+CSS smooth scroll
+Framer Motion page transitions
+Lenis smooth scroll
+Swiper 3D gallery effects
+
+## Developed by:
+Aman Korabu
