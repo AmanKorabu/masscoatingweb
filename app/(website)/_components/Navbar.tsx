@@ -128,7 +128,7 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  href={`${navbarData?.ctaLink || "/contact"}`}
+                  href={`${navbarData?.ctaLink || "/get-quote"}`}
                   onClick={() => setIsOpen(false)}
                   className="mt-2 px-4 py-3 rounded-xl font-semibold text-center text-white bg-gradient-to-r from-blue-500 to-cyan-500"
                 >
