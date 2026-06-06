@@ -83,8 +83,12 @@ export default function AdminServicesPage() {
       features: [],
       extraServices: [],
       tag: "",
+      slug: "",
       displayOrder: services.length + 1,
       isActive: true,
+      seoTitle: "",
+      seoDescription: "",
+      seoKeywords: [],
     });
 
     setModalOpen(true);
@@ -96,6 +100,7 @@ export default function AdminServicesPage() {
     form.setFieldsValue({
       documentId: record.id,
       title: record.title,
+      slug: record.slug || record.id || createSlug(record.title),
       shortDescription: record.shortDescription,
       fullDescription: record.fullDescription,
       images: record.images || [],
@@ -104,6 +109,10 @@ export default function AdminServicesPage() {
       tag: record.tag || "",
       displayOrder: record.displayOrder,
       isActive: record.isActive,
+
+      seoTitle: record.seoTitle || record.title,
+      seoDescription: record.seoDescription || record.shortDescription,
+      seoKeywords: record.seoKeywords || [],
     });
 
     setModalOpen(true);
@@ -154,15 +163,16 @@ export default function AdminServicesPage() {
 
   const onFinish = async (values: ServiceFormValues) => {
     try {
-      setSaving(true);
+      const serviceSlug = values.slug || createSlug(values.title);
 
       const id =
         values.documentId ||
-        createSlug(values.title) ||
+        serviceSlug ||
         `service-${Date.now()}`;
 
       const serviceData: ServiceData = {
         title: values.title,
+        slug: serviceSlug,
         shortDescription: values.shortDescription,
         fullDescription: values.fullDescription,
         images: values.images || [],
@@ -171,8 +181,11 @@ export default function AdminServicesPage() {
         tag: values.tag || "",
         displayOrder: Number(values.displayOrder || 1),
         isActive: values.isActive ?? true,
-      };
 
+        seoTitle: values.seoTitle || `${values.title} Services`,
+        seoDescription: values.seoDescription || values.shortDescription,
+        seoKeywords: (values.seoKeywords || []).filter(Boolean),
+      };
       await saveService(id, serviceData);
 
       message.success("Service saved successfully");
@@ -228,6 +241,16 @@ export default function AdminServicesPage() {
             {record.shortDescription}
           </p>
         </div>
+      ),
+    },
+    {
+      title: "Slug",
+      dataIndex: "slug",
+      width: 180,
+      render: (slug: string) => (
+        <span className="text-xs text-slate-500">
+          /services/{slug || "-"}
+        </span>
       ),
     },
     {
@@ -322,7 +345,17 @@ export default function AdminServicesPage() {
           >
             <Input size="large" placeholder="Shot Blasting" />
           </Form.Item>
-
+          <Form.Item
+            label="Slug"
+            name="slug"
+            extra="Used for SEO URL. Example: powder-coating, shot-blasting"
+            rules={[{ required: true, message: "Slug is required" }]}
+          >
+            <Input
+              size="large"
+              placeholder="powder-coating"
+            />
+          </Form.Item>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             <Form.Item label="Tag" name="tag">
               <Input size="large" placeholder="New / Popular / Featured" />
@@ -463,7 +496,57 @@ export default function AdminServicesPage() {
               </div>
             )}
           </Form.List>
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <Title level={5} className="!mb-4">
+              SEO Settings
+            </Title>
 
+            <Form.Item label="SEO Title" name="seoTitle">
+              <Input
+                size="large"
+                placeholder="Powder Coating Services"
+              />
+            </Form.Item>
+
+            <Form.Item label="SEO Description" name="seoDescription">
+              <TextArea
+                rows={3}
+                placeholder="Mass Coating Company provides professional powder coating services for industrial metal parts."
+              />
+            </Form.Item>
+
+            <Form.List name="seoKeywords">
+              {(fields, { add, remove }) => (
+                <div>
+                  <div className="mb-3 flex items-center justify-between">
+                    <Text strong>SEO Keywords</Text>
+                    <Button icon={<PlusOutlined />} onClick={() => add("")}>
+                      Add Keyword
+                    </Button>
+                  </div>
+
+                  <div className="space-y-3">
+                    {fields.map(({ key, name, ...restField }) => (
+                      <Space key={key} className="flex" align="baseline">
+                        <Form.Item {...restField} name={name} className="!mb-0">
+                          <Input
+                            className="min-w-[260px] md:min-w-[560px]"
+                            placeholder="Example: Powder Coating Services"
+                          />
+                        </Form.Item>
+
+                        <Button
+                          danger
+                          icon={<DeleteOutlined />}
+                          onClick={() => remove(name)}
+                        />
+                      </Space>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </Form.List>
+          </div>
           <Button
             type="primary"
             htmlType="submit"

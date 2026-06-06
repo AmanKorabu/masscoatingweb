@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://masscoatingweb.vercel.app"),
+  metadataBase: new URL("https://mass-coating-company.vercel.app"),
 
   title: {
     default: "Mass Coating Company | Powder Coating & Shot Blasting Services",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Mass Coating Company",
-      url: "https://masscoatingweb.vercel.app",
+      url: "https://mass-coating-company.vercel.app",
     },
   ],
 
@@ -48,14 +48,14 @@ export const metadata: Metadata = {
   category: "Industrial Coating Services",
 
   alternates: {
-    canonical: "https://masscoatingweb.vercel.app",
+    canonical: "https://mass-coating-company.vercel.app",
   },
 
   openGraph: {
     title: "Mass Coating Company | Powder Coating & Shot Blasting Services",
     description:
       "Professional powder coating, shot blasting, industrial painting and surface finishing services for metal and fabrication parts.",
-    url: "https://masscoatingweb.vercel.app",
+    url: "https://mass-coating-company.vercel.app",
     siteName: "Mass Coating Company",
     type: "website",
     locale: "en_IN",

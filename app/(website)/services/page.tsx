@@ -11,6 +11,7 @@ import {
   ToolOutlined,
 } from "@ant-design/icons";
 import { Modal } from "antd";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function ServicesPage() {
@@ -264,14 +265,25 @@ export default function ServicesPage() {
                         </div>
                       )}
 
-                      <button
-                        type="button"
-                        onClick={() => openServiceModal(service)}
-                        className="mt-auto inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#07111f] text-sm font-bold text-white transition hover:bg-blue-700"
-                      >
-                        <EyeOutlined />
-                        See More
-                      </button>
+                      <div className="mt-auto grid gap-2">
+                        <button
+                          type="button"
+                          onClick={() => openServiceModal(service)}
+                          className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white text-sm font-bold text-slate-800 transition hover:bg-slate-100"
+                        >
+                          <EyeOutlined />
+                          Quick View
+                        </button>
+
+                        {service.slug && (
+                          <Link
+                            href={`/services/${service.slug}`}
+                            className="inline-flex h-11 w-full items-center justify-center rounded-xl bg-[#07111f] text-sm font-bold text-white transition hover:bg-blue-700"
+                          >
+                            View Full Details
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </article>
                 );

@@ -8,6 +8,7 @@ import {
   orderBy,
   query,
   setDoc,
+  getDoc,
 } from "firebase/firestore";
 
 const servicesCollection = collection(db, "services");
@@ -24,10 +25,25 @@ export const getServices = async (): Promise<ServiceData[]> => {
 
 export const saveService = async (id: string, data: ServiceData) => {
   const docRef = doc(db, "services", id);
-  return await setDoc(docRef, data);
+  return await setDoc(docRef, data, { merge: true });
 };
 
 export const deleteService = async (id: string) => {
   const docRef = doc(db, "services", id);
   return await deleteDoc(docRef);
+};
+export const getServiceBySlug = async (
+  slug: string
+): Promise<ServiceData | null> => {
+  const docRef = doc(db, "services", slug);
+  const docSnap = await getDoc(docRef);
+
+  if (!docSnap.exists()) {
+    return null;
+  }
+
+  return {
+    id: docSnap.id,
+    ...docSnap.data(),
+  } as ServiceData;
 };
