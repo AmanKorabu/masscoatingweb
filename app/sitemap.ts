@@ -3,42 +3,43 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://masscoatingweb.vercel.app";
 
-  return [
+  const routes = [
     {
-      url: baseUrl,
-      lastModified: new Date(),
+      path: "",
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      path: "/about",
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
+      path: "/services",
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.95,
     },
     {
-      url: `${baseUrl}/gallery`,
-      lastModified: new Date(),
+      path: "/gallery",
       changeFrequency: "weekly",
-      priority: 0.7,
+      priority: 0.75,
     },
     {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      path: "/contact",
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.85,
     },
     {
-      url: `${baseUrl}/get-quote`,
-      lastModified: new Date(),
+      path: "/get-quote",
       changeFrequency: "monthly",
       priority: 0.9,
     },
-  ];
+  ] as const;
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route.path}`,
+    lastModified: new Date(),
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
 }

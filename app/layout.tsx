@@ -10,26 +10,31 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Mass Coating Company provides powder coating, shot blasting, industrial painting, surface finishing and industrial coating services for metal and fabrication parts with trusted quality.",
+    "Mass Coating Company provides powder coating, shot blasting, industrial painting, surface finishing and industrial coating services for metal, fabrication and industrial parts with trusted quality.",
 
   keywords: [
     "Mass Coating Company",
     "Mass Coating",
     "Mass Coating Company Pune",
-    "Mass Coating Pune",
+    "Mass Coating Company Maharashtra",
     "Powder Coating",
+    "Powder Coating Services",
     "Shot Blasting",
+    "Shot Blasting Services",
     "Industrial Painting",
+    "Industrial Painting Services",
     "Surface Finishing",
+    "Surface Treatment",
     "Industrial Coating",
     "Industrial Coating Services",
-    "Powder Coating Services",
-    "Shot Blasting Services",
     "Metal Coating Services",
-    "Surface Treatment",
     "Metal Finishing",
     "Fabrication Part Coating",
+    "Coating Company",
+    "Coating Services",
   ],
+
+  applicationName: "Mass Coating Company",
 
   authors: [
     {
@@ -42,14 +47,26 @@ export const metadata: Metadata = {
   publisher: "Mass Coating Company",
   category: "Industrial Coating Services",
 
+  alternates: {
+    canonical: "https://masscoatingweb.vercel.app",
+  },
+
   openGraph: {
     title: "Mass Coating Company | Powder Coating & Shot Blasting Services",
     description:
-      "Professional powder coating, shot blasting, industrial painting and surface finishing services for industrial metal parts.",
+      "Professional powder coating, shot blasting, industrial painting and surface finishing services for metal and fabrication parts.",
     url: "https://masscoatingweb.vercel.app",
     siteName: "Mass Coating Company",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: "Mass Coating Company Logo",
+      },
+    ],
   },
 
   twitter: {
@@ -57,14 +74,32 @@ export const metadata: Metadata = {
     title: "Mass Coating Company | Industrial Coating Services",
     description:
       "Powder coating, shot blasting, industrial painting and surface finishing services for metal and fabrication parts.",
+    images: ["/icon-512.png"],
   },
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+
+  manifest: "/site.webmanifest",
 
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,
