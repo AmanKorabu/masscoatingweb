@@ -81,15 +81,15 @@ export default function HomePage() {
                 </div>
 
                 {/* Heading */}
-                <h1 className="text-3xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                  {heroData?.title}
+                <h1>
+                  {heroData?.title ||
+                    "Mass Coating Company - Powder Coating & Shot Blasting Services"}
                 </h1>
 
-                {/* Subtitle */}
-                <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-200 sm:text-base md:text-lg">
-                  {heroData?.subtitle}
+                <p>
+                  {heroData?.subtitle ||
+                    "Professional industrial coating, shot blasting, powder coating and surface finishing services for metal and fabrication parts."}
                 </p>
-
                 {/* Buttons */}
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
