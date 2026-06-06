@@ -106,10 +106,9 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "eDShFwXzt3s-T8K7vOFYfob2drwsNZ49SV7sAanpSHA",
+    google: "-BFIAtTsVOdNoSekzOxc39T_lqqlNeI_s-iqB2OUnNE",
   },
 };
-
 export default function RootLayout({
   children,
 }: {
